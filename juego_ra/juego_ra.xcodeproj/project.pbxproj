@@ -253,9 +253,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "El segundo permso";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Para solicitar permisos de usar la ubicacion, su descripcion";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "El tercer permiso";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "El segundo permso";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para solicitar permisos de usar la ubicacion, su descripcion";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -283,9 +283,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "El segundo permso";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Para solicitar permisos de usar la ubicacion, su descripcion";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "El tercer permiso";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "El segundo permso";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para solicitar permisos de usar la ubicacion, su descripcion";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

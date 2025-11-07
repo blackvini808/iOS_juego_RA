@@ -13,42 +13,54 @@ class ServicioUbicacion: NSObject, CLLocationManagerDelegate{
     var manejador_ubicacion = CLLocationManager()
     
     var estado_de_autorizacion: CLAuthorizationStatus?
-    var ubicacion_actual: CLLocationCoordinate2D?
+    var ubicacion_actual: CLLocation?
     
     override init(){
         super.init()
         
         manejador_ubicacion.delegate = self
+        manejador_ubicacion.startUpdatingLocation()
     }
     
-    func locationManagerDidAutorization(_ manager: CLLocationManager){
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         estado_de_autorizacion = manager.authorizationStatus
         
-        switch(estado_de_autorizacion){
+        switch(manager.authorizationStatus){
             case .notDetermined:
                 manager.requestWhenInUseAuthorization()
+                manager.requestAlwaysAuthorization()
+                
+            case .authorizedAlways:
+                manager.startUpdatingLocation()
+                
             case .authorizedWhenInUse:
-                manager.requestLocation()
+                manager.startUpdatingLocation()
+                
             case .denied:
-                print("que malvado el usuario")
+                print("Que malvado es el usario")
+                
             case .restricted:
-                print("permisos restringidos para la ubi")
-            
+                print("Tenemos permisos restringidos para usar la ubicacion")
+                
             default:
-                print("Algo salió muy mal")
+                print("Algo salio muy mal!!!")
         }
-        
+    
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("\(locations.count)")
         print("\(locations.last)")
-        ubicacion_actual = locations.last?.coordinate
+        
+        if locations.last != nil{
+            ubicacion_actual = locations.last
+        }
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print("Obtuvimos un error: \(error.localizedDescription)")
     }
+    
     func detener_ubicacion(){
         manejador_ubicacion.stopUpdatingLocation()
     }
