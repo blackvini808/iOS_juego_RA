@@ -10,12 +10,14 @@ struct PantallaPrincipal: View{
     @State var proveedor_ubicacion = ServicioUbicacion()
     
     var body: some View{
+        VistaCamara()
+        
         NavigationStack{
             ForEach(pistas){ pista in
                 if(pista.puede_ser_recogida(ubicacion: proveedor_ubicacion.ubicacion_actual)
                 ){
                 NavigationLink{
-                        Text("Esta es la pantalla de lapista")
+                    SelectorPantallaPista(pista_id: pista.id)
                     } label: {
                         Text("PICALE PARA PISTA \(pista.id)")
                     }

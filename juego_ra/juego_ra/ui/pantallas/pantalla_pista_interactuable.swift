@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct PantallaPistaInteractuable: View {
-    var cuerpo_pista: PistaInteractuable
-    
-    var body: some View {
-        Text(cuerpo_pista.interacciones)
+    var pista: PistaInteractuable
+
+var body: some View {
+        Text(pista.informacion)
         
-        ForEach(cuerpo_pista.interacciones){ boton in
-            VStack{
-                Text(boton.mensaje).onTapGesture {
-                    print("Ir a la pista \(boton.conecta_con_pista)")
-                }
+        ForEach(pista.interacciones){ boton in
+            NavigationLink {
+                SelectorPantallaPista(pista_id: boton.conecta_con_pista)
+            }
+            label: {
+                Text(boton.mensaje)
             }
         }
-    }
+}
 }
